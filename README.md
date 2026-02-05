@@ -14,4 +14,7 @@
    4) Enviar alteraçoes para o Github:
    git push
 
-   
+   ## Branch 
+
+   Mostrar branches no computador:
+   git branch
