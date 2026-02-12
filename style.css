@@ -1,5 +1,4 @@
 /* RESET DE CONFIGURAÇÕES GERAIS. */
-
 * {
     margin:0;
     padding:0;
@@ -8,14 +7,13 @@
 
 body {
     background-color: bisque;
-    background-image: url(assets/2jojofundo.jpg);
-    color: antiquewhite;
+    background-image: url(assets/cleanback.jpg);
+    color: rgb(2, 1, 0);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
 }
-
 
 h1 {
     text-align: center;
@@ -29,4 +27,73 @@ p {
     font-size: 15px;
     font-family:Arial, Helvetica, sans-serif;
     margin: auto;
+}
+
+hr {
+    max-width: 50%;
+    height: auto;
+}
+
+button {
+    display: block;
+    height: auto;
+    margin: 5px auto;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin: 20px auto;
+    color: brown;
+}
+
+/* PERSONALIZAÇÃO DA LISTA */
+h2 {
+    color: blue;
+    margin: 20px;
+}
+
+ol {
+    color: rgb(172, 111, 20);
+    margin: 10px;
+    text-align: center;
+}
+
+li {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+h3 {
+
+    text-align: center;
+    color: blue;
+    margin: 15px auto;
+}
+
+img {
+    max-width:300px;
+    margin-left:auto;
+    margin-right: auto;
+    display: block;
+}
+
+input-group {
+    display:flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    width: 3px;
+}
+input [type= "text"] {
+    margin: 0px auto;
+    text-align: center;
+    border-radius: 3px;
+    outline: none;
 }
