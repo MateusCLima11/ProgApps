@@ -1,99 +1,88 @@
-/* RESET DE CONFIGURAÇÕES GERAIS. */
+/* css é usado para decorar páginas. */
+/* RESET DE CONFIGURAÇÕES GERAIS */
 * {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
+/* para deixar o site bonito em todos os navegadores  */
 
 body {
-    background-color: bisque;
-    background-image: url(assets/cleanback.jpg);
-    color: rgb(2, 1, 0);
+    background-image: url("/assets/image3.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
 }
 
-h1 {
-    text-align: center;
-    color: rgb(17, 35, 51);
-    font-size:50px;
-    margin:20;
+/* significa que tudo que eu escrever dentro so vai afetar o h1 no html. */
+h1{
+    text-align: center; 
+    /* muda onde o texto vai ficar */
+    color: #57563a;
+    /* mudou a cor do título */
+    margin: 20px;
+    /* deu espaço no título */
 }
 
-p {
-    text-align: justify;
-    font-size: 15px;
-    font-family:Arial, Helvetica, sans-serif;
-    margin: auto;
+p,
+.red-text {
+    color: #fff;
+    margin: 10px;
 }
 
-hr {
+hr{
     max-width: 50%;
-    height: auto;
+    margin: 0 auto;
 }
 
 button {
-    display: block;
-    height: auto;
-    margin: 5px auto;
-    padding: 10px 15px;
-    border-radius: 6px;
-    text-decoration: none;
+  background-color: #57563a;
+  display:block;
+  height:auto;
+  margin: 5px auto;
+  padding: 5px;
+  border-radius: 6px;
+  text-decoration:none
 }
 
-a {
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    margin: 20px auto;
-    color: brown;
+a{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    margin: 3px auto;
+    color:#f82121
 }
 
-/* PERSONALIZAÇÃO DA LISTA */
-h2 {
-    color: blue;
+/* PERSONALIZAÇÃO DA LISTA. */
+
+    
+
+h2  {
+    color: #49573a;
+    /* mudou a cor do título */
     margin: 20px;
+    /* deu espaço no título */
+     text-align: center; 
 }
-
-ol {
-    color: rgb(172, 111, 20);
+ol{
+    text-align: center; 
+    color: #fff;
     margin: 10px;
-    text-align: center;
 }
 
-li {
-    font-size: 14px;
-    margin-bottom: 10px;
-    font-weight: 500;
-}
-
-h3 {
-
-    text-align: center;
-    color: blue;
-    margin: 15px auto;
-}
-
-img {
-    max-width:300px;
-    margin-left:auto;
-    margin-right: auto;
-    display: block;
-}
-
-input-group {
+.input-group{
     display:flex;
     gap: 10px;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
-    margin: 20px;
-    width: 3px;
+    margin: 20px 0;
+    width: 100%;
 }
-input [type= "text"] {
+
+input[type="text"]{
     margin: 0px auto;
-    text-align: center;
-    border-radius: 3px;
+    text-align:center;
+    border-radius: 8px;
     outline: none;
 }
