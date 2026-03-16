@@ -1,12 +1,12 @@
 function gerarTabuada() {
     const numeroInput = document.getElementById("numeroInput");
-    let numero = parent(numeroInput.value);
+    let numero = parseInt(numeroInput.value);
 
     const resultadoDiv = document.getElementById("resultadoTabuada");
     resultadoDiv.innerHTML = "";
 
     // Verificar se a entrada é um número válido.
-    if (isNaN(numero) || numero === numero || numero === "") {
+    if (isNaN(numero) || numero === null || numero === "") {
         resultadoDiv.innerHTML= "<p>Por favor, digite um número válido.</p>"
         return; // ESte comando sai da função
     }
