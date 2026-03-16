@@ -1,0 +1,157 @@
+/* Importando a fonte futurista da Grade */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Paleta de cores TRON */
+:root {
+    --tron-cyan: #00e5ff;
+    --tron-glow: rgba(0, 229, 255, 0.6);
+    --tron-bg: #050505;
+    --tron-surface: #111111;
+    --tron-text: #e0ffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background-color: var(--tron-bg);
+    /* Criando o chão da Grade (The Grid) */
+    background-image: 
+        linear-gradient(rgba(0, 229, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 229, 255, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    color: var(--tron-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: var(--tron-surface);
+    padding: 40px;
+    border: 2px solid var(--tron-cyan);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    /* Brilho externo e interno do painel */
+    box-shadow: 
+        0 0 15px var(--tron-glow),
+        inset 0 0 10px var(--tron-glow);
+}
+
+h1 {
+    color: var(--tron-cyan);
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* Efeito neon no texto */
+    text-shadow: 0 0 10px var(--tron-cyan), 0 0 20px var(--tron-cyan);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: #aaaaaa;
+    text-align: left;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 25px; /* Espaço generoso entre os dois inputs */
+    background-color: transparent;
+    border: 1px solid var(--tron-cyan);
+    color: var(--tron-cyan);
+    font-size: 1.2rem;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Escondendo as setinhas de aumentar/diminuir do navegador */
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+/* Quando você clica no input, ele brilha mais forte */
+input[type="number"]:focus {
+    box-shadow: 0 0 15px var(--tron-glow);
+    background-color: rgba(0, 229, 255, 0.05);
+}
+
+input::placeholder {
+    color: rgba(0, 229, 255, 0.3);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    background-color: transparent;
+    color: var(--tron-cyan);
+    border: 2px solid var(--tron-cyan);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px var(--tron-glow);
+}
+
+/* Efeito de hover no botão (Inverte as cores e acende) */
+button:hover {
+    background-color: var(--tron-cyan);
+    color: var(--tron-bg);
+    box-shadow: 0 0 20px var(--tron-cyan), 0 0 40px var(--tron-cyan);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* --- Telas de Resultado --- */
+#resultadoSoma, 
+#resultadoProduto, 
+#resultadoMedia, 
+#resultadoMaiorMenor {
+    background-color: rgba(0, 229, 255, 0.05);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 3px solid var(--tron-cyan);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-align: left;
+    display: none; /* Mantém escondido até ter um resultado */
+    transition: all 0.3s ease;
+}
+
+/* O "Truque": Se a div não estiver vazia, ela aparece e acende */
+#resultadoSoma:not(:empty), 
+#resultadoProduto:not(:empty), 
+#resultadoMedia:not(:empty), 
+#resultadoMaiorMenor:not(:empty) {
+    display: block;
+    box-shadow: inset 0 0 10px var(--tron-glow);
+    animation: fadeIn 0.5s ease-in-out; /* Pequena animação de entrada */
+}
+
+/* Animação suave quando os resultados aparecem */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
