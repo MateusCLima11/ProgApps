@@ -1,157 +1,159 @@
-/* Importando a fonte futurista da Grade */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+/* Importando uma fonte limpa e esportiva */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/* Paleta de cores TRON */
+/* Variáveis com as cores oficiais do Bahia */
 :root {
-    --tron-cyan: #00e5ff;
-    --tron-glow: rgba(0, 229, 255, 0.6);
-    --tron-bg: #050505;
-    --tron-surface: #111111;
-    --tron-text: #e0ffff;
+  --bahia-blue: #004A99;
+  --bahia-red: #E31D2B;
+  --bahia-white: #FFFFFF;
+  --bahia-bg-blue: #003066; /* Azul mais escuro para o fundo geral */
+  --bahia-bg-white: #F9FBFF; /* Branco levemente azulado para o container */
+  --text-dark: #1A1A1A;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Orbitron', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-color: var(--tron-bg);
-    /* Criando o chão da Grade (The Grid) */
-    background-image: 
-        linear-gradient(rgba(0, 229, 255, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 229, 255, 0.1) 1px, transparent 1px);
-    background-size: 40px 40px;
-    color: var(--tron-text);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  /* Fundo vibrante azul */
+  background-color: var(--bahia-bg-blue);
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  /* Fundo com listras diagonais sutis */
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(227, 29, 43, 0.1) 0,
+    rgba(227, 29, 43, 0.1) 2px,
+    transparent 0,
+    transparent 50%
+  );
+  background-size: 15px 15px;
+}
+
+/* Estilo para a logo centralizada no topo - AGORA BEM PEQUENA */
+#logoBahia {
+  max-width: 128px; /* Reduzido drasticamente para ser apenas um detalhe */
+  margin-top: 0px;  /* Removida margem superior desnecessária */
+  margin-bottom: 15px; /* Margem inferior reduzida para aproximar do container */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* Brilho suave na logo contra o fundo escuro */
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
 }
 
 .container {
-    background-color: var(--tron-surface);
-    padding: 40px;
-    border: 2px solid var(--tron-cyan);
-    border-radius: 8px;
-    width: 100%;
-    max-width: 450px;
-    text-align: center;
-    /* Brilho externo e interno do painel */
-    box-shadow: 
-        0 0 15px var(--tron-glow),
-        inset 0 0 10px var(--tron-glow);
+  background-color: var(--bahia-bg-white);
+  padding: 35px; /* Reduzido levemente o padding interno */
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  /* Sombra mais forte e colorida */
+  box-shadow: 0 15px 40px rgba(0, 50, 100, 0.4);
+  /* Borda Tricolor Dinâmica */
+  border: 8px solid;
+  border-image: linear-gradient(to right, var(--bahia-blue) 33%, var(--bahia-white) 33% 66%, var(--bahia-red) 66%) 1;
+  border-radius: 4px; /* O border-image quebra border-radius alto, usamos baixo aqui */
 }
 
 h1 {
-    color: var(--tron-cyan);
-    font-size: 1.5rem;
-    line-height: 1.4;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    /* Efeito neon no texto */
-    text-shadow: 0 0 10px var(--tron-cyan), 0 0 20px var(--tron-cyan);
+  color: var(--bahia-blue);
+  font-size: 1.8rem; /* Reduzido levemente o tamanho do título */
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  /* Pequena sombra no texto para profundidade */
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.05);
 }
 
 label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    color: #aaaaaa;
-    text-align: left;
+  display: block;
+  margin-bottom: 6px; /* Reduzida margem */
+  font-size: 1.05rem; /* Ajuste leve */
+  color: #333;
+  text-align: left;
+  font-weight: 700;
 }
 
 input[type="number"] {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 25px; /* Espaço generoso entre os dois inputs */
-    background-color: transparent;
-    border: 1px solid var(--tron-cyan);
-    color: var(--tron-cyan);
-    font-size: 1.2rem;
-    text-align: center;
-    outline: none;
-    transition: all 0.3s ease;
+  width: 100%;
+  padding: 12px; /* Reduzido padding interno do input */
+  margin-bottom: 20px; /* Reduzida margem entre inputs */
+  /* Mais cor na borda do input */
+  border: 2px solid var(--bahia-blue);
+  border-radius: 8px;
+  font-size: 1.1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  background-color: var(--bahia-white);
+  color: var(--bahia-blue);
+  font-weight: 700;
 }
 
-/* Escondendo as setinhas de aumentar/diminuir do navegador */
-input[type="number"]::-webkit-inner-spin-button, 
-input[type="number"]::-webkit-outer-spin-button { 
-    -webkit-appearance: none; 
-    margin: 0; 
-}
-
-/* Quando você clica no input, ele brilha mais forte */
+/* Quando você clica no input, ele destaca em vermelho */
 input[type="number"]:focus {
-    box-shadow: 0 0 15px var(--tron-glow);
-    background-color: rgba(0, 229, 255, 0.05);
-}
-
-input::placeholder {
-    color: rgba(0, 229, 255, 0.3);
+  border-color: var(--bahia-red);
+  box-shadow: 0 0 10px rgba(227, 29, 43, 0.3);
+  outline: none;
 }
 
 button {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 30px;
-    margin-top: 10px;
-    background-color: transparent;
-    color: var(--tron-cyan);
-    border: 2px solid var(--tron-cyan);
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px var(--tron-glow);
+  width: 100%;
+  padding: 16px; /* Ajuste leve */
+  /* Botão azul vibrante */
+  background-color: var(--bahia-blue);
+  color: var(--bahia-white);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 10px; /* Reduzida margem */
+  margin-top: 5px;   /* Adicionada pequena margem superior */
+  box-shadow: 0 5px 15px rgba(0, 74, 153, 0.4);
 }
 
-/* Efeito de hover no botão (Inverte as cores e acende) */
+/* Hover effect on button (Troca para vermelho no hover!) */
 button:hover {
-    background-color: var(--tron-cyan);
-    color: var(--tron-bg);
-    box-shadow: 0 0 20px var(--tron-cyan), 0 0 40px var(--tron-cyan);
+  background-color: var(--bahia-red);
+  box-shadow: 0 5px 20px rgba(227, 29, 43, 0.5);
+  transform: translateY(-2px);
 }
 
 button:active {
-    transform: scale(0.98);
+  transform: translateY(1px) scale(0.99);
 }
 
-/* --- Telas de Resultado --- */
-#resultadoSoma, 
-#resultadoProduto, 
-#resultadoMedia, 
-#resultadoMaiorMenor {
-    background-color: rgba(0, 229, 255, 0.05);
-    padding: 15px;
-    margin-bottom: 10px;
-    border-left: 3px solid var(--tron-cyan);
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    text-align: left;
-    display: none; /* Mantém escondido até ter um resultado */
-    transition: all 0.3s ease;
+/* --- Estilização para as divs de resultado criadas pelo JS --- */
+div#resultadoSoma,
+div#resultadoProduto,
+div#resultadoMedia,
+div#resultadoMaiorMenor {
+  margin-top: 15px; /* Reduzida margem superior */
+  padding: 12px;
+  /* Mais cor no fundo dos resultados */
+  background-color: #E6F0FF; /* Azul clarinho */
+  border: 2px solid var(--bahia-blue);
+  border-left: 10px solid var(--bahia-red); /* Super destaque em vermelho */
+  text-align: left;
+  border-radius: 6px;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-/* O "Truque": Se a div não estiver vazia, ela aparece e acende */
-#resultadoSoma:not(:empty), 
-#resultadoProduto:not(:empty), 
-#resultadoMedia:not(:empty), 
-#resultadoMaiorMenor:not(:empty) {
-    display: block;
-    box-shadow: inset 0 0 10px var(--tron-glow);
-    animation: fadeIn 0.5s ease-in-out; /* Pequena animação de entrada */
-}
-
-/* Animação suave quando os resultados aparecem */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
+div strong {
+  color: var(--bahia-blue);
+  font-weight: 700;
 }
