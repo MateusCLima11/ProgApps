@@ -1,0 +1,83 @@
+/* Caso já tenha importado no arquivo anterior, pode ignorar esta linha */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Roboto:wght@400;500&display=swap');
+
+/* Variáveis focadas no Exército de Amestris / Alquimistas Federais */
+:root {
+  --amestris-blue: #1A2634;    /* Azul escuro do uniforme militar */
+  --amestris-trim: #E5C158;    /* Dourado dos cordões e patentes */
+  --amestris-dark: #0F171E;    /* Fundo tático escuro */
+  --fma-steel: #8D99AE;        /* Prata das armas e relógios */
+  --fma-parchment: #F4EBD0;    /* Tom de papel antigo para leitura */
+  --fma-stone-red: #C1121F;    /* Vermelho da Pedra Filosofal / Símbolo de Flamel */
+}
+
+/* Container Principal (O "Dossiê" do Curso) */
+.info-curso {
+  background: linear-gradient(135deg, var(--amestris-blue) 0%, var(--amestris-dark) 100%);
+  border: 1px solid var(--fma-steel);
+  /* A borda esquerda mais grossa simula os cordões dourados do ombro militar */
+  border-left: 6px solid var(--amestris-trim); 
+  border-radius: 4px;
+  width: 350px;
+  padding: 25px;
+  margin: 20px auto;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+  font-family: 'Roboto', sans-serif;
+  color: #E0E0E0;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito Hover com brilho focado no dourado militar */
+.info-curso:hover {
+  box-shadow: 0 8px 20px rgba(229, 193, 88, 0.2);
+  transform: scale(1.02);
+}
+
+/* Título (Dados do curso) */
+.info-curso h2 {
+  font-family: 'Cinzel', serif;
+  color: var(--fma-parchment);
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 1px solid var(--fma-steel);
+  padding-bottom: 8px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* Adicionando um detalhe que lembra a Cruz de Flamel ao final do título */
+.info-curso h2::after {
+  content: " ✛"; 
+  color: var(--fma-stone-red);
+  font-size: 1.2rem;
+  float: right;
+  opacity: 0.8;
+}
+
+/* Parágrafos com os dados do curso */
+.info-curso p {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin: 12px 0;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.03); /* Fundo muito sutil para destacar cada linha */
+  border-radius: 4px;
+  border-left: 2px solid transparent; /* Preparação para a animação do hover */
+  transition: border-left 0.2s ease, background 0.2s ease;
+}
+
+/* Interação individual em cada linha de informação */
+.info-curso p:hover {
+  border-left: 2px solid var(--fma-stone-red);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Estilizando os rótulos (Nome, Carga Horária, Local) */
+.info-curso p strong,
+.info-curso p::first-line {
+  color: var(--amestris-trim);
+  font-weight: 500;
+  margin-right: 5px;
+}

@@ -1,0 +1,97 @@
+/* Importando uma fonte clássica para dar um ar de "documento antigo" ou magia */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Roboto:wght@400;500&display=swap');
+
+/* Variáveis com a paleta de cores de Fullmetal Alchemist */
+:root {
+  --fma-red: #B11623;         /* Vermelho do manto do Edward / Pedra Filosofal */
+  --fma-gold: #D4AF37;        /* Dourado do Relógio de Alquimista Federal */
+  --fma-steel: #7A8B99;       /* Prateado do Automail / Armadura do Al */
+  --fma-dark: #1A1A1D;        /* Fundo escuro militar */
+  --fma-glow: #4DB8FF;        /* Brilho azul da transmutação */
+  --fma-text-light: #EAEAEA;  /* Texto claro para contraste */
+}
+
+/* Container Principal (O "Card" do Aluno) */
+.info-aluno {
+  background: linear-gradient(135deg, var(--fma-dark) 0%, #2A2A2E 100%);
+  border: 2px solid var(--fma-steel);
+  border-top: 5px solid var(--fma-red); /* Detalhe forte em vermelho */
+  border-radius: 8px;
+  width: 350px;
+  padding: 25px;
+  margin: 20px auto;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  font-family: 'Roboto', sans-serif;
+  color: var(--fma-text-light);
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+/* Efeito de Transmutação ao passar o mouse (Hover) */
+.info-aluno:hover {
+  border-color: var(--fma-glow);
+  box-shadow: 0 0 20px rgba(77, 184, 255, 0.4), inset 0 0 10px rgba(77, 184, 255, 0.1);
+  transform: translateY(-5px);
+}
+
+/* Título (Informações do aluno) */
+.info-aluno h2 {
+  font-family: 'Cinzel', serif; /* Fonte com estilo de fantasia/clássica */
+  color: var(--fma-gold);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-bottom: 1px dashed var(--fma-steel);
+  padding-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Adicionando um pequeno detalhe antes do título (como se fosse um símbolo alquímico) */
+.info-aluno h2::before {
+  content: "✦ ";
+  color: var(--fma-red);
+}
+
+.info-aluno h2::after {
+  content: " ✦";
+  color: var(--fma-red);
+}
+
+/* Parágrafos com os dados do aluno */
+.info-aluno p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Estilizando o rótulo ("Nome:", "Idade", "Curso:") */
+.info-aluno p strong, 
+.info-aluno p::first-line {
+  color: var(--fma-steel);
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+/* Detalhe estético no fundo (opcional) - Círculo de transmutação abstrato */
+.info-aluno::after {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  border: 2px solid rgba(212, 175, 55, 0.05); /* Dourado quase invisível */
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.info-aluno h2, .info-aluno p {
+  position: relative;
+  z-index: 1; /* Garante que o texto fique acima do círculo de fundo */
+}

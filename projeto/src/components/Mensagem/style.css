@@ -1,0 +1,12 @@
+.mensagem h1 {
+    color: red;
+    margin: 10px 0;
+}
+
+.mensagem p {
+    color: red;
+    margin: 10px 0;
+}
+.mensagem hr {
+    max-width: 50%;
+}
