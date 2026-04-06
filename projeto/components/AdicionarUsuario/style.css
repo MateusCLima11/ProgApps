@@ -1,0 +1,129 @@
+/* --- Estilo Geral da Página (Opcional, para imergir) --- */
+body {
+    background-color: #1a1a1d; /* Fundo escuro, quase ardósia */
+    color: #e0e0e0; /* Texto claro, mas não branco puro */
+    font-family: 'Times New Roman', Times, serif; /* Fonte clássica e séria */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* --- O Contêiner Principal (Como um painel de controle de Alquimia) --- */
+.formulario {
+    background-color: #2e2e33; /* Metal escuro */
+    border: 5px solid #a1a1a1; /* Borda de metal mais clara */
+    border-radius: 15px;
+    padding: 30px;
+    width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    position: relative; /* Para o círculo de fundo */
+    overflow: hidden; /* Mantém o círculo dentro */
+}
+
+/* --- Adicionando um Círculo de Transmutação Sutil ao Fundo (Efeito visual) --- */
+.formulario::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    height: 150%;
+    /* Substitua URL_DO_CIRCULO_DE_TRANSMUTACAO pela imagem desejada */
+    background-image: url('https://i.etsystatic.com/56170466/r/il/29c895/7076262918/il_fullxfull.7076262918_taj5.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.05; /* Muito sutil */
+    z-index: 0;
+}
+
+/* Garante que o conteúdo fique acima do círculo */
+.formulario h2, 
+.formulario form, 
+.formulario ul {
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Títulos (Como títulos de documentos militares) --- */
+.formulario h2 {
+    color: #c92c2c; /* Vermelho Alquimista de Estado ( Edward's coat) */
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #a1a1a1;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* --- O Formulário --- */
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre os campos */
+}
+
+/* --- Campos de Entrada (Como slots em um painel metálico) --- */
+.formulario input[type="text"] {
+    background-color: #fff8e1; /* Cor de pergaminho antigo */
+    border: 2px solid #8d6e63; /* Borda de couro/bronze */
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 16px;
+    color: #3e2723; /* Texto marrom escuro */
+    transition: all 0.3s ease;
+}
+
+/* Efeito de Foco (A alquimia ativa) */
+.formulario input[type="text"]:focus {
+    outline: none;
+    border-color: #c92c2c; /* Vermelho ativo */
+    box-shadow: 0 0 10px rgba(201, 44, 44, 0.5); /* Brilho vermelho sutil */
+}
+
+/* --- O Botão 'Adicionar' (A Transmutação Final) --- */
+.formulario button[type='submit'] {
+    background-color: #c92c2c; /* Vermelho Alquimista */
+    color: #fff;
+    border: 3px solid #fbc02d; /* Borda de 'ouro' (a pedra filosofal) */
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Efeito de Hover (Energia acumulando) */
+.formulario button[type='submit']:hover {
+    background-color: #e53935;
+    box-shadow: 0 0 15px rgba(251, 192, 45, 0.7); /* Brilho dourado intenso */
+    transform: translateY(-2px);
+}
+
+/* --- Lista de Usuários (Como um registro em um livro antigo) --- */
+.formulario ul {
+    list-style-type: none; /* Remove bolinhas */
+    padding: 0;
+    margin-top: 20px;
+    border-top: 2px solid #a1a1a1;
+    padding-top: 15px;
+}
+
+/* Cada Item da Lista */
+.formulario li {
+    background-color: rgba(255, 248, 225, 0.8); /* Pergaminho semi-transparente */
+    color: #3e2723;
+    border: 1px solid #8d6e63;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif; /* Fonte mais legível para dados */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
