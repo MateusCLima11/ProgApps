@@ -53,6 +53,26 @@ const Funcionario = sequelize.define('Funcionario', {
     }
 });
 
+// Modelo: Produto
+const Produto = sequelize.define('Produto', {
+    nome: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    lote: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    quantidade: {
+        type: DataTypes.INTEGER, // Tipo inteiro para contagem de itens
+        allowNull: false
+    },
+    preco: {
+        type: DataTypes.DECIMAL(10, 2), // Tipo decimal ideal para moedas (ex: 99.90)
+        allowNull: false
+    }
+});
+
 // 3. CONFIGURAÇÃO DO SERVIDOR EXPRESS
 const app = express();
 app.use(cors());
@@ -108,8 +128,32 @@ app.post('/funcionarios', async (req, res) => {
 });
 
 
+// 6. ROTAS PARA PRODUTOS
+
+// ROTA GET - LISTAR TODOS OS PRODUTOS
+app.get('/produtos', async (req, res) => {
+    try {
+        const produtos = await Produto.findAll();
+        res.json(produtos);
+    } catch (error) {
+        res.status(500).json({ error: 'Erro ao buscar produtos' });
+    }
+});
+
+// ROTA POST - CRIAR UM NOVO PRODUTO
+app.post('/produtos', async (req, res) => {
+    const { nome, lote, quantidade, preco } = req.body;
+    try {
+        const novoProduto = await Produto.create({ nome, lote, quantidade, preco });
+        res.status(201).json(novoProduto);
+    } catch (error) {
+        res.status(500).json({ error: 'Erro ao criar produto' });
+    }
+});
+
+
 // INICIANDO SERVIDOR
-// O sequelize.sync() criará as tabelas 'Clientes' e 'Funcionarios' automaticamente
+// O sequelize.sync() agora criará também a tabela 'Produtos' automaticamente
 sequelize.sync().then(() => {
     app.listen(PORT, () => {
         console.log(`🚀 Servidor rodando na porta ${PORT}`);
